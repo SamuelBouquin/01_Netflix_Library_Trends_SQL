@@ -1,0 +1,22 @@
+-----------------------------------------------------------------------------------------------
+File:        .gitignore
+Project:     01_Netflix_Library_Trends_SQL
+Author:      Samuel Bouquin
+Date:        April 2026
+Description: Prevents large data files, system artifacts, and temporary logs 
+             from being tracked in the repository to maintain a clean workspace.
+-----------------------------------------------------------------------------------------------
+
+# Data files
+# The raw dataset is excluded to keep the repository lightweight.
+# Instructions for downloading the source data are provided in the README.
+data/netflix_titles.csv
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Database tool artifacts (pgAdmin)
+*.log
+*.tmp

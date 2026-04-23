@@ -1,11 +1,11 @@
------------------------------------------------------------------------------------------------
+---
 File:        README.md
 Project:     01_Netflix_Library_Trends_SQL
 Author:      Samuel Bouquin
 Date:        April 2026
 Description: Project overview, technical highlights, and key insights for the 
              Netflix library audit.
------------------------------------------------------------------------------------------------
+---
 
 # Netflix Library Trends: SQL Audit
 
@@ -73,6 +73,19 @@ To run the scripts in this repository, you will need:
 2.  **Table Creation:** Run `scripts/01_create_table.sql` to build the schema.
 3.  **Import:** Use the pgAdmin Import/Export tool to load `data/netflix_titles.csv` into the new table (ensure "Header" is toggled ON).
 4.  **Analysis:** Execute `scripts/02_descriptive_analysis.sql` to generate the library insights.
+
+## Project Limitations
+While this project successfully provides a high-level audit, there are a few limitations to keep in mind:
+* **Dataset Currency:** The data is a snapshot from 2021. It does not reflect Netflix’s current library, recent content acquisitions, or the introduction of ad-supported tiers.
+* **Flat Data Structure:** For simplicity, the data was kept in a single table. In a production environment, this data would ideally be normalized into separate tables (e.g., Genres, Countries, and Directors) to reduce redundancy and improve data integrity.
+* **Data Completeness:** Several entries in the director and cast_members columns contain null or missing values, which can slightly skew totals for those specific categories.
+
+## Future Improvements & Learnings
+This project served as a foundational exercise in SQL data ingestion and analysis. Future iterations or similar projects could include:
+* **Advanced Analytics:** Implementing window functions to analyze trends over time, such as the growth of specific genres year-over-year.
+* **Database Normalization:** Rebuilding the database into 3rd Normal Form (3NF) to practice more complex table relationships and JOIN operations.
+* **Dashboard Integration:** Connecting this PostgreSQL database to a visualization tool like Power BI or Tableau to turn these static results into an interactive business dashboard.
+* **Key Learning:** A major takeaway from this project was the importance of data types during the ingestion phase. Handling inconsistent date strings by initially importing them as VARCHAR saved significant troubleshooting time and taught me the value of a flexible staging process.
 
 ## Contact Info
 **Email:** sambouquin@gmail.com
